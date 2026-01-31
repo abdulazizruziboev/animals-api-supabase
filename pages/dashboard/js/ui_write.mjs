@@ -21,6 +21,8 @@ function cardsWrite(data) {
     elCardsBox.classList.add("grid");
     skeletonWrite(false);
     if(data.length!=0) {
+        document.querySelector("#empty_box").classList.remove("flex");
+        document.querySelector("#empty_box").classList.add("hidden");
         data.forEach(el => {
         let cloneCard = elCardTemplate.cloneNode(true).content;
         cloneCard.querySelector(".animal-title").textContent=el.name?el.name:"No title";
