@@ -121,6 +121,8 @@ elAddForm.addEventListener("submit",(evt)=>{
         new FormData(elAddForm).forEach((value,key)=>{
             newAnimalData[key]=value;
         });
+        console.log(newAnimalData);
+        
         toastUI("Request sending...","warning");
         fetch("https://yngpnqpbzzlmwuwjnxwe.supabase.co/rest/v1/animals",{
             method:"POST",
@@ -129,8 +131,6 @@ elAddForm.addEventListener("submit",(evt)=>{
                 "Content-Type":"application/json",
                 "Authorization":`Bearer ${localStorage.getItem("access_token")}`
             }, body:JSON.stringify(newAnimalData)
-        }).then(res=>{
-           return res.json()
         }).then(res=>{
             if(res.ok) {
             document.querySelector("#add-modal").classList="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full hidden";
@@ -145,17 +145,15 @@ elAddForm.addEventListener("submit",(evt)=>{
             mainRequest();
             } else {
                 toastUI("Please re-login","warning");
+                console.log(res);
+                
                 setTimeout(()=>{
                     localStorage.removeItem("access_token");
                     localStorage.removeItem("user_name");
                     window.location.href=window.location.origin;
                 },3000);
             }
-        }).catch(err=>{
-            console.log(err);
-            toastUI("Error... try again","error");
-            addFormButtonDisabler(false);
-        });
+        })
     }
 });
 
