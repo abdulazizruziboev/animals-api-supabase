@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en" class="bg-neutral-primary">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals - Home</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Zoo" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <nav
+      class="bg-neutral-primary w-full z-20 top-0 start-0 border-b border-default"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span
+            class="self-center text-xl text-heading font-semibold whitespace-nowrap"
+            >Animals</span
+          >
+        </a>
+        <div class="flex gap-x-[6px] md:order-2 rtl:space-x-reverse">
+          <button
+            id="dropdownInformationButton"
+            data-dropdown-toggle="dropdownInformation"
+            class="inline-flex items-center justify-center text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm w-[40px] h-[40px] focus:outline-none cursor-pointer"
+            type="button"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.5 0.875C5.49797 0.875 3.875 2.49797 3.875 4.5C3.875 6.15288 4.98124 7.54738 6.49373 7.98351C5.2997 8.12901 4.27557 8.55134 3.50407 9.31167C2.52216 10.2794 2.02502 11.72 2.02502 13.5999C2.02502 13.8623 2.23769 14.0749 2.50002 14.0749C2.76236 14.0749 2.97502 13.8623 2.97502 13.5999C2.97502 11.8799 3.42786 10.7206 4.17091 9.9883C4.91536 9.25463 6.02674 8.87499 7.49995 8.87499C8.97317 8.87499 10.0846 9.25463 10.8291 9.98831C11.5721 10.7206 12.025 11.8799 12.025 13.5999C12.025 13.8623 12.2376 14.0749 12.5 14.0749C12.7623 14.075 12.975 13.8623 12.975 13.6C12.975 11.72 12.4778 10.2794 11.4959 9.31166C10.7244 8.55135 9.70025 8.12903 8.50625 7.98352C10.0187 7.5474 11.125 6.15289 11.125 4.5C11.125 2.49797 9.50203 0.875 7.5 0.875ZM4.825 4.5C4.825 3.02264 6.02264 1.825 7.5 1.825C8.97736 1.825 10.175 3.02264 10.175 4.5C10.175 5.97736 8.97736 7.175 7.5 7.175C6.02264 7.175 4.825 5.97736 4.825 4.5Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownInformation"
+            class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-72"
+          >
+            <div class="p-2">
+              <div
+                class="flex items-center px-2.5 p-2 space-x-1.5 text-sm bg-neutral-secondary-strong rounded"
+              >
+                <div
+                  class="w-8 h-8 rounded-[12px] flex items-center justify-center border-1 text-body"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.5 0.875C5.49797 0.875 3.875 2.49797 3.875 4.5C3.875 6.15288 4.98124 7.54738 6.49373 7.98351C5.2997 8.12901 4.27557 8.55134 3.50407 9.31167C2.52216 10.2794 2.02502 11.72 2.02502 13.5999C2.02502 13.8623 2.23769 14.0749 2.50002 14.0749C2.76236 14.0749 2.97502 13.8623 2.97502 13.5999C2.97502 11.8799 3.42786 10.7206 4.17091 9.9883C4.91536 9.25463 6.02674 8.87499 7.49995 8.87499C8.97317 8.87499 10.0846 9.25463 10.8291 9.98831C11.5721 10.7206 12.025 11.8799 12.025 13.5999C12.025 13.8623 12.2376 14.0749 12.5 14.0749C12.7623 14.075 12.975 13.8623 12.975 13.6C12.975 11.72 12.4778 10.2794 11.4959 9.31166C10.7244 8.55135 9.70025 8.12903 8.50625 7.98352C10.0187 7.5474 11.125 6.15289 11.125 4.5C11.125 2.49797 9.50203 0.875 7.5 0.875ZM4.825 4.5C4.825 3.02264 6.02264 1.825 7.5 1.825C8.97736 1.825 10.175 3.02264 10.175 4.5C10.175 5.97736 8.97736 7.175 7.5 7.175C6.02264 7.175 4.825 5.97736 4.825 4.5Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-y-[3px] justify-center px-1">
+                  <div
+                    class="js-email font-medium text-heading leading-[100%] truncate max-w-[200px]"
+                  >
+                    email
+                  </div>
+                  <div class="js-user-role truncate text-body leading-[100%]">
+                    admin
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul
+              class="px-2 pb-2 text-sm text-body font-medium"
+              aria-labelledby="dropdownInformationButton"
+            >
+              <li>
+                <a
+                  onclick="
+                    localStorage.removeItem('access_token');
+                    localStorage.removeItem('email');
+                    location.reload();
+                  "
+                  href="#"
+                  class="inline-flex items-center w-full p-2 text-fg-danger hover:bg-neutral-tertiary-medium rounded"
+                >
+                  <svg
+                    class="w-4 h-4 me-1.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
+                    />
+                  </svg>
+                  Sign out
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm w-[40px] h-[40px] focus:outline-none cursor-pointer flex items-center justify-center"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+
+          <button
+            data-modal-target="login-modal"
+            data-modal-toggle="login-modal"
+            type="button"
+            class="text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none cursor-pointer"
+          >
+            Login
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary"
+          >
+            <li>
+              <a
+                href="/"
+                class="block py-2 px-3 text-white bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                id="dashLink"
+                href="/pages/dashboard/"
+                class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                >Dashboard</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                >How to use?</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="py-10 px-5 flex flex-col gap-4">
+      <div
+        id="empty_box"
+        class="min-h-[70vh] w-full hidden items-center justify-center mx-auto max-w-screen-xl"
+      >
+        <div class="flex flex-col items-center text-body">
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.30902 1C2.93025 1 2.58398 1.214 2.41459 1.55279L1.05279 4.27639C1.01807 4.34582 1 4.42238 1 4.5V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V4.5C14 4.42238 13.9819 4.34582 13.9472 4.27639L12.5854 1.55281C12.416 1.21403 12.0698 1.00003 11.691 1.00003L7.5 1.00001L3.30902 1ZM3.30902 2L7 2.00001V4H2.30902L3.30902 2ZM8 4V2.00002L11.691 2.00003L12.691 4H8ZM7.5 5H13V13H2V5H7.5ZM5.5 7C5.22386 7 5 7.22386 5 7.5C5 7.77614 5.22386 8 5.5 8H9.5C9.77614 8 10 7.77614 10 7.5C10 7.22386 9.77614 7 9.5 7H5.5Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <div>Animals not found</div>
+        </div>
+      </div>
+      <div
+        class="js-cards-box max-w-screen-xl mx-auto hidden grid-cols-1 x500:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
+      ></div>
+      <div
+        class="js-skeleton-box max-w-screen-xl mx-auto grid grid-cols-1 x500:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
+      ></div>
+    </main>
+
+    <!-- Modals -->
+
+    <!-- Login modal -->
+    <div
+      id="login-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div
+          class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6"
+        >
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-between border-b border-default pb-4 md:pb-5"
+          >
+            <h3 class="text-lg font-medium text-heading">
+              Sign in to our platform
+            </h3>
+            <button
+              type="button"
+              class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center cursor-pointer"
+              data-modal-hide="login-modal"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <form class="pt-4 md:pt-6" id="loginForm">
+            <div class="mb-4">
+              <label
+                for="email"
+                class="block mb-2.5 text-sm font-medium text-heading"
+                >Your email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                placeholder="johndoe"
+                minlength="4"
+              />
+            </div>
+            <div>
+              <label
+                for="password"
+                class="block mb-2.5 text-sm font-medium text-heading"
+                >Your password</label
+              >
+              <input
+                type="password"
+                id="password"
+                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                placeholder="•••••••••"
+                name="password"
+                minlength="6"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none w-full my-4 cursor-pointer flex gap-x-2 justify-center items-center min-h-[41.6px]"
+            >
+              Login to your account
+            </button>
+            <div class="text-sm font-medium text-body">
+              Not registered?
+              <button
+                data-modal-hide="login-modal"
+                data-modal-target="register-modal"
+                data-modal-toggle="register-modal"
+                class="text-fg-brand hover:underline cursor-pointer"
+              >
+                Create account
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register modal -->
+    <div
+      id="register-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div
+          class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6"
+        >
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-between border-b border-default pb-4 md:pb-5"
+          >
+            <h3 class="text-lg font-medium text-heading">
+              Sign up to our platform
+            </h3>
+            <button
+              type="button"
+              class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center cursor-pointer"
+              data-modal-hide="register-modal"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <form class="pt-4 md:pt-6" id="registerForm">
+            <div class="mb-4">
+              <label
+                for="reg_email"
+                class="block mb-2.5 text-sm font-medium text-heading"
+                >Your email</label
+              >
+              <input
+                type="email"
+                id="reg_email"
+                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                placeholder="johndoe"
+                name="email"
+              />
+            </div>
+            <div>
+              <label
+                for="reg_password"
+                class="block mb-2.5 text-sm font-medium text-heading"
+                >Your password</label
+              >
+              <input
+                type="password"
+                id="reg_password"
+                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                placeholder="•••••••••"
+                name="password"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none w-full my-4 cursor-pointer min-h-[41.6px] flex items-center justify-center"
+            >
+              Register your new account
+            </button>
+            <div class="text-sm font-medium text-body">
+              You registered?
+              <button
+                data-modal-hide="register-modal"
+                data-modal-target="login-modal"
+                data-modal-toggle="login-modal"
+                class="text-fg-brand hover:underline cursor-pointer"
+              >
+                Login account
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Templates -->
+    <template class="js-skeleton-card-template">
+      <div
+        class="bg-neutral-primary-soft block max-w-xl p-6 border border-default rounded-base shadow-xs hover:bg-neutral-secondary-medium animate-pulse gap-y-[4px] flex flex-col"
+        role="status"
+      >
+        <div
+          class="h-[32px] bg-neutral-quaternary rounded-full w-full max-w-32"
+        ></div>
+        <hr
+          class="h-px w-full my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-50"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-40"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-70"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-60"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-50"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-65"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-60"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-50"
+        ></div>
+      </div>
+    </template>
+
+    <template class="js-animal-card-template">
+      <div
+        class="animal-card bg-neutral-primary-soft block max-w-xl p-6 border border-default rounded-base shadow-xs hover:bg-neutral-secondary-medium"
+      >
+        <h3
+          class="animal-title mb-3 text-2xl font-semibold tracking-tight text-heading leading-8"
+        >
+          Snake
+        </h3>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Category:&nbsp;</span>
+          <span class="animal-category">Reptile</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Speed:&nbsp;</span>
+          <span class="animal-speed">20</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Sound:&nbsp;</span>
+          <span class="animal-sound">Hiss</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Age:&nbsp;</span>
+          <span class="animal-year">20</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Weight:&nbsp;</span>
+          <span class="animal-weight">10</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Color:&nbsp;</span>
+          <span class="animal-color">Green</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Habitat:&nbsp;</span>
+          <span class="animal-habibat">Desert</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Is wild:&nbsp;</span>
+          <span class="animal-wild">Yes</span>
+        </p>
+      </div>
+    </template>
+
+    <template id="toast-template">
+      <div
+        class="flex items-center w-full max-w-sm p-4 text-body bg-neutral-primary-soft rounded-base shadow-xs border border-default fixed flex items-center justify-start w-full max-w-[400px] p-3 top-5 end-5 transition-opacity"
+        role="alert"
+        style="z-index: 99999"
+      >
+        <div
+          class="js-toast-icon inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-warning bg-warning-soft rounded"
+        >
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <span class="sr-only">Warning icon</span>
+        </div>
+        <div class="js-toast-text ms-3 text-sm font-normal">
+          Improve password difficulty.
+        </div>
+      </div>
+    </template>
+
+    <div
+      id="error_box"
+      class="bg-neutral-primary w-full h-full inset-0 fixed items-center justify-center hidden"
+    >
+      <div class="flex flex-col items-center">
+        <svg
+          class="text-fg-danger"
+          width="80"
+          height="80"
+          viewBox="0 0 15 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.877075 7.49988C0.877075 3.84219 3.84222 0.877045 7.49991 0.877045C11.1576 0.877045 14.1227 3.84219 14.1227 7.49988C14.1227 11.1575 11.1576 14.1227 7.49991 14.1227C3.84222 14.1227 0.877075 11.1575 0.877075 7.49988ZM7.49991 1.82704C4.36689 1.82704 1.82708 4.36686 1.82708 7.49988C1.82708 10.6329 4.36689 13.1727 7.49991 13.1727C10.6329 13.1727 13.1727 10.6329 13.1727 7.49988C13.1727 4.36686 10.6329 1.82704 7.49991 1.82704ZM9.85358 5.14644C10.0488 5.3417 10.0488 5.65829 9.85358 5.85355L8.20713 7.49999L9.85358 9.14644C10.0488 9.3417 10.0488 9.65829 9.85358 9.85355C9.65832 10.0488 9.34173 10.0488 9.14647 9.85355L7.50002 8.2071L5.85358 9.85355C5.65832 10.0488 5.34173 10.0488 5.14647 9.85355C4.95121 9.65829 4.95121 9.3417 5.14647 9.14644L6.79292 7.49999L5.14647 5.85355C4.95121 5.65829 4.95121 5.3417 5.14647 5.14644C5.34173 4.95118 5.65832 4.95118 5.85358 5.14644L7.50002 6.79289L9.14647 5.14644C9.34173 4.95118 9.65832 4.95118 9.85358 5.14644Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <span class="text-body font-semibold">Opps something wrong...</span>
+        <span class="text-body text-center leading-[120%]"
+          >There is a temporary connection <br />
+          problem with the server.</span
+        >
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("storage", () => window.location.reload());
+
+      function x() {
+        if (localStorage.getItem("access_token")) {
+          document.querySelector(`[data-modal-target="login-modal"]`).hidden =
+            true;
+          document.querySelector(`#dropdownInformationButton`).hidden = false;
+          document.querySelector(".js-email").textContent =
+            localStorage.getItem("email")
+              ? localStorage.getItem("email")
+              : "No email";
+          document.querySelector(".js-user-role").textContent =
+            localStorage.getItem("user_role")
+              ? localStorage.getItem("user_role")
+              : "No role";
+        } else {
+          document
+            .querySelector("#dashLink")
+            .addEventListener("click", (evt) => evt.preventDefault());
+
+          document
+            .querySelector("#dashLink")
+            .setAttribute("data-modal-target", "login-modal");
+          document
+            .querySelector("#dashLink")
+            .setAttribute("data-modal-toggle", "login-modal");
+
+          document.querySelector(`[data-modal-target="login-modal"]`).hidden =
+            false;
+          document.querySelector(`#dropdownInformationButton`).hidden = true;
+        }
+      }
+      x();
+
+      var themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon",
+      );
+      var themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon",
+      );
+
+      // Change the icons inside the button based on previous settings
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
+      } else {
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      var themeToggleBtn = document.getElementById("theme-toggle");
+
+      // toggle icons inside button
+      themeToggleDarkIcon.classList.toggle("hidden");
+      themeToggleLightIcon.classList.toggle("hidden");
+
+      // if set via local storage previously
+      if (localStorage.getItem("color-theme")) {
+        if (localStorage.getItem("color-theme") === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.add("dark");
+        }
+      }
+
+      themeToggleBtn.addEventListener("click", () => {
+        {
+          // toggle icons inside button
+          themeToggleDarkIcon.classList.toggle("hidden");
+          themeToggleLightIcon.classList.toggle("hidden");
+
+          // if set via local storage previously
+          if (localStorage.getItem("color-theme")) {
+            if (localStorage.getItem("color-theme") === "light") {
+              document.documentElement.classList.add("dark");
+              localStorage.setItem("color-theme", "dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("color-theme", "light");
+            }
+
+            // if NOT set via local storage previously
+          } else {
+            if (document.documentElement.classList.contains("dark")) {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("color-theme", "light");
+            } else {
+              document.documentElement.classList.add("dark");
+              localStorage.setItem("color-theme", "dark");
+            }
+          }
+        }
+      });
+    </script>
+
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="/home_js/main_app.mjs" type="module"></script>
+  </body>
+</html>

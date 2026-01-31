@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="en" class="bg-neutral-primary">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals - Dashboard</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Zoo" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="mx-auto">
+    <nav
+      class="bg-neutral-primary w-full z-20 top-0 start-0 border-b border-default"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span
+            class="self-center text-xl text-heading font-semibold whitespace-nowrap"
+            >Animals</span
+          >
+        </a>
+        <div class="flex gap-x-[6px] md:order-2 rtl:space-x-reverse">
+          <button
+            id="dropdownInformationButton"
+            data-dropdown-toggle="dropdownInformation"
+            class="inline-flex items-center justify-center text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm w-[40px] h-[40px] focus:outline-none cursor-pointer"
+            type="button"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.5 0.875C5.49797 0.875 3.875 2.49797 3.875 4.5C3.875 6.15288 4.98124 7.54738 6.49373 7.98351C5.2997 8.12901 4.27557 8.55134 3.50407 9.31167C2.52216 10.2794 2.02502 11.72 2.02502 13.5999C2.02502 13.8623 2.23769 14.0749 2.50002 14.0749C2.76236 14.0749 2.97502 13.8623 2.97502 13.5999C2.97502 11.8799 3.42786 10.7206 4.17091 9.9883C4.91536 9.25463 6.02674 8.87499 7.49995 8.87499C8.97317 8.87499 10.0846 9.25463 10.8291 9.98831C11.5721 10.7206 12.025 11.8799 12.025 13.5999C12.025 13.8623 12.2376 14.0749 12.5 14.0749C12.7623 14.075 12.975 13.8623 12.975 13.6C12.975 11.72 12.4778 10.2794 11.4959 9.31166C10.7244 8.55135 9.70025 8.12903 8.50625 7.98352C10.0187 7.5474 11.125 6.15289 11.125 4.5C11.125 2.49797 9.50203 0.875 7.5 0.875ZM4.825 4.5C4.825 3.02264 6.02264 1.825 7.5 1.825C8.97736 1.825 10.175 3.02264 10.175 4.5C10.175 5.97736 8.97736 7.175 7.5 7.175C6.02264 7.175 4.825 5.97736 4.825 4.5Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownInformation"
+            class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-72"
+          >
+            <div class="p-2">
+              <div
+                class="flex items-center px-2.5 p-2 space-x-1.5 text-sm bg-neutral-secondary-strong rounded"
+              >
+                <div
+                  class="w-8 h-8 rounded-[12px] flex items-center justify-center border-1 text-body"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.5 0.875C5.49797 0.875 3.875 2.49797 3.875 4.5C3.875 6.15288 4.98124 7.54738 6.49373 7.98351C5.2997 8.12901 4.27557 8.55134 3.50407 9.31167C2.52216 10.2794 2.02502 11.72 2.02502 13.5999C2.02502 13.8623 2.23769 14.0749 2.50002 14.0749C2.76236 14.0749 2.97502 13.8623 2.97502 13.5999C2.97502 11.8799 3.42786 10.7206 4.17091 9.9883C4.91536 9.25463 6.02674 8.87499 7.49995 8.87499C8.97317 8.87499 10.0846 9.25463 10.8291 9.98831C11.5721 10.7206 12.025 11.8799 12.025 13.5999C12.025 13.8623 12.2376 14.0749 12.5 14.0749C12.7623 14.075 12.975 13.8623 12.975 13.6C12.975 11.72 12.4778 10.2794 11.4959 9.31166C10.7244 8.55135 9.70025 8.12903 8.50625 7.98352C10.0187 7.5474 11.125 6.15289 11.125 4.5C11.125 2.49797 9.50203 0.875 7.5 0.875ZM4.825 4.5C4.825 3.02264 6.02264 1.825 7.5 1.825C8.97736 1.825 10.175 3.02264 10.175 4.5C10.175 5.97736 8.97736 7.175 7.5 7.175C6.02264 7.175 4.825 5.97736 4.825 4.5Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-y-[3px] justify-center px-1">
+                  <div
+                    class="js-email font-medium text-heading leading-[100%] max-w-[200px] truncate"
+                  >
+                    Email
+                  </div>
+                  <div class="js-user-role truncate text-body leading-[100%]">
+                    admin
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul
+              class="px-2 pb-2 text-sm text-body font-medium"
+              aria-labelledby="dropdownInformationButton"
+            >
+              <li>
+                <a
+                  onclick="
+                    localStorage.removeItem('access_token');
+                    localStorage.removeItem('username');
+                    location.reload();
+                  "
+                  href="#"
+                  class="inline-flex items-center w-full p-2 text-fg-danger hover:bg-neutral-tertiary-medium rounded"
+                >
+                  <svg
+                    class="w-4 h-4 me-1.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
+                    />
+                  </svg>
+                  Sign out
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm w-[40px] h-[40px] focus:outline-none cursor-pointer flex items-center justify-center"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary"
+          >
+            <li>
+              <a
+                href="/"
+                class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                id="dashLink"
+                href="/pages/dashboard/"
+                class="block py-2 px-3 text-white bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0"
+                >Dashboard</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                >How to use?</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="py-10 px-5 flex flex-col gap-4 mx-auto">
+      <div class="w-full flex items-center justify-end mx-auto max-w-screen-xl">
+        <button
+          data-modal-target="add-modal"
+          data-modal-toggle="add-modal"
+          class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none flex items-center justify-center gap-x-2 cursor-pointer"
+          type="button"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <span> Add animal </span>
+        </button>
+      </div>
+      <div
+        id="empty_box"
+        class="min-h-[70vh] w-full hidden items-center justify-center mx-auto max-w-screen-xl"
+      >
+        <div class="flex flex-col items-center text-body">
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.30902 1C2.93025 1 2.58398 1.214 2.41459 1.55279L1.05279 4.27639C1.01807 4.34582 1 4.42238 1 4.5V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V4.5C14 4.42238 13.9819 4.34582 13.9472 4.27639L12.5854 1.55281C12.416 1.21403 12.0698 1.00003 11.691 1.00003L7.5 1.00001L3.30902 1ZM3.30902 2L7 2.00001V4H2.30902L3.30902 2ZM8 4V2.00002L11.691 2.00003L12.691 4H8ZM7.5 5H13V13H2V5H7.5ZM5.5 7C5.22386 7 5 7.22386 5 7.5C5 7.77614 5.22386 8 5.5 8H9.5C9.77614 8 10 7.77614 10 7.5C10 7.22386 9.77614 7 9.5 7H5.5Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <div>Animals not found</div>
+        </div>
+      </div>
+      <div
+        class="js-cards-box max-w-screen-xl mx-auto hidden grid-cols-1 x500:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
+      ></div>
+      <div
+        class="js-skeleton-box max-w-screen-xl mx-auto grid grid-cols-1 x500:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
+      ></div>
+      <div
+        class="js-more-loader max-w-screen-xl mx-auto hidden items-center justify-end w-full"
+      >
+        <button
+          type="button"
+          class="js-more-loader-button text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none cursor-pointer flex gap-x-2 items-center"
+        >
+          <span class="pointer-events-none">More Down</span>
+          <svg
+            class="pointer-events-none"
+            width="18"
+            height="18"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- style="animation: ios-spin 1s linear infinite" -->
+            <style>
+              @keyframes ios-spin {
+                from {
+                  transform: rotate(0deg);
+                }
+                to {
+                  transform: rotate(360deg);
+                }
+              }
+            </style>
+
+            <path
+              d="M7.5 0C7.77614 0 8 0.223858 8 0.5V2.5C8 2.77614 7.77614 3 7.5 3C7.22386 3 7 2.77614 7 2.5V0.5C7 0.223858 7.22386 0 7.5 0ZM2.1967 2.1967C2.39196 2.00144 2.70854 2.00144 2.90381 2.1967L4.31802 3.61091C4.51328 3.80617 4.51328 4.12276 4.31802 4.31802C4.12276 4.51328 3.80617 4.51328 3.61091 4.31802L2.1967 2.90381C2.00144 2.70854 2.00144 2.39196 2.1967 2.1967ZM0.5 7C0.223858 7 0 7.22386 0 7.5C0 7.77614 0.223858 8 0.5 8H2.5C2.77614 8 3 7.77614 3 7.5C3 7.22386 2.77614 7 2.5 7H0.5ZM2.1967 12.8033C2.00144 12.608 2.00144 12.2915 2.1967 12.0962L3.61091 10.682C3.80617 10.4867 4.12276 10.4867 4.31802 10.682C4.51328 10.8772 4.51328 11.1938 4.31802 11.3891L2.90381 12.8033C2.70854 12.9986 2.39196 12.9986 2.1967 12.8033ZM12.5 7C12.2239 7 12 7.22386 12 7.5C12 7.77614 12.2239 8 12.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 7.22386 14.7761 7 14.5 7H12.5ZM10.682 4.31802C10.4867 4.12276 10.4867 3.80617 10.682 3.61091L12.0962 2.1967C12.2915 2.00144 12.608 2.00144 12.8033 2.1967C12.9986 2.39196 12.9986 2.70854 12.8033 2.90381L11.3891 4.31802C11.1938 4.51328 10.8772 4.51328 10.682 4.31802ZM8 12.5C8 12.2239 7.77614 12 7.5 12C7.22386 12 7 12.2239 7 12.5V14.5C7 14.7761 7.22386 15 7.5 15C7.77614 15 8 14.7761 8 14.5V12.5ZM10.682 10.682C10.8772 10.4867 11.1938 10.4867 11.3891 10.682L12.8033 12.0962C12.9986 12.2915 12.9986 12.608 12.8033 12.8033C12.608 12.9986 12.2915 12.9986 12.0962 12.8033L10.682 11.3891C10.4867 11.1938 10.4867 10.8772 10.682 10.682Z"
+              fill="currentColor"
+              fill-opacity="0.85"
+            />
+          </svg>
+        </button>
+      </div>
+    </main>
+
+    <!-- Modals -->
+
+    <!-- Delete modal -->
+
+    <div
+      id="delete-modal"
+      tabindex="-1"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div class="relative p-4 w-full max-w-md max-h-full">
+        <div
+          class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6"
+        >
+          <button
+            type="button"
+            class="absolute top-3 end-2.5 text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center"
+            data-modal-hide="delete-modal"
+          >
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18 17.94 6M18 18 6.06 6"
+              />
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+          <div class="p-4 md:p-5 text-center">
+            <svg
+              class="mx-auto mb-4 text-fg-disabled w-12 h-12"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+            <h3 class="mb-6 text-body">
+              Are you sure you want to delete this animal about?
+            </h3>
+            <div class="flex items-center space-x-4 justify-center">
+              <button
+                type="button"
+                class="js-delete-yes-btn text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none cursor-pointer w-[120px] flex items-center justify-center"
+              >
+                Yes, I'm sure
+              </button>
+              <button
+                data-modal-hide="delete-modal"
+                type="button"
+                class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none cursor-pointer"
+              >
+                No, cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add modal -->
+    <div
+      id="add-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div
+          class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6"
+        >
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-between border-b border-default pb-4 md:pb-5"
+          >
+            <h3 class="text-lg font-medium text-heading">Add new animal</h3>
+            <button
+              type="button"
+              class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center cursor-pointer"
+              data-modal-hide="add-modal"
+              onclick="document.querySelector('#addAnimalForm').reset()"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <form id="addAnimalForm">
+            <div class="grid gap-4 grid-cols-2 py-4 md:py-6 h-auto">
+              <div class="col-span-2">
+                <label
+                  for="add_name"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  id="add_name"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal name"
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="add_category"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Category</label
+                >
+                <input
+                  type="text"
+                  name="category"
+                  id="add_category"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal category"
+                />
+              </div>
+              <div class="col-span-1">
+                <label
+                  for="add_speed"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Speed</label
+                >
+                <input
+                  type="number"
+                  name="speed"
+                  id="add_speed"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal speed"
+                />
+              </div>
+              <div class="col-span-1">
+                <label
+                  for="add_age"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Age</label
+                >
+                <input
+                  type="number"
+                  name="year"
+                  id="add_age"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal age"
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="add_color"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Color</label
+                >
+                <input
+                  type="text"
+                  name="color"
+                  id="add_color"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal color"
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="add_habitat"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Habitat</label
+                >
+                <input
+                  type="text"
+                  name="habitat"
+                  id="add_habitat"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal habitat"
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="add_sound"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Sound text</label
+                >
+                <input
+                  type="text"
+                  name="soundText"
+                  id="add_sound"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal sound-text"
+                />
+              </div>
+              <div class="col-span-1">
+                <label
+                  for="add_weight"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Weight</label
+                >
+                <input
+                  type="number"
+                  name="weight"
+                  id="add_weight"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal weight"
+                />
+              </div>
+              <div class="col-span-1">
+                <label
+                  for="add_wild"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Is wild</label
+                >
+                <select
+                  name="isWild"
+                  id="add_wild"
+                  class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body"
+                >
+                  <option selected="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="flex items-center space-x-4 border-t border-default pt-4 md:pt-6"
+            >
+              <button
+                type="submit"
+                class="inline-flex items-center text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm w-[160px] py-2.5 focus:outline-none cursor-pointer flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 me-1.5 -ms-0.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 12h14m-7 7V5"
+                  />
+                </svg>
+                Add new animal
+              </button>
+              <button
+                data-modal-hide="add-modal"
+                type="button"
+                class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none cursor-pointer"
+                onclick="document.querySelector('#addAnimalForm').reset()"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <button
+      data-modal-toggle="edit-modal"
+      data-modal-target="edit-modal"
+    ></button>
+
+    <!-- Edit modal -->
+    <div
+      id="edit-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div
+          class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6"
+        >
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-between border-b border-default pb-4 md:pb-5"
+          >
+            <h3 class="text-lg font-medium text-heading">Edit animal</h3>
+            <button
+              type="button"
+              class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center cursor-pointer"
+              data-modal-hide="edit-modal"
+              onclick="document.querySelector('#editAnimalForm').reset()"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18 17.94 6M18 18 6.06 6"
+                />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <form id="editAnimalForm">
+            <div class="grid gap-4 grid-cols-2 py-4 md:py-6 h-auto">
+              <div class="col-span-2">
+                <label
+                  for="edit_name"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  id="edit_name"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal name"
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="edit_category"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Category</label
+                >
+                <input
+                  type="text"
+                  name="category"
+                  id="edit_category"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal category"
+                />
+              </div>
+              <div class="col-span-1">
+                <label
+                  for="edit_speed"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Speed</label
+                >
+                <input
+                  type="number"
+                  name="speed"
+                  id="edit_speed"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal speed"
+                />
+              </div>
+              <div class="col-span-1">
+                <label
+                  for="edit_age"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Age</label
+                >
+                <input
+                  type="number"
+                  name="year"
+                  id="edit_age"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal age"
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="edit_color"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Color</label
+                >
+                <input
+                  type="text"
+                  name="color"
+                  id="edit_color"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal color"
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="edit_habitat"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Habitat</label
+                >
+                <input
+                  type="text"
+                  name="habitat"
+                  id="edit_habitat"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal habitat"
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="edit_sound"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Sound text</label
+                >
+                <input
+                  type="text"
+                  name="soundText"
+                  id="edit_sound"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal sound-text"
+                />
+              </div>
+              <div class="col-span-1">
+                <label
+                  for="edit_weight"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Weight</label
+                >
+                <input
+                  type="number"
+                  name="weight"
+                  id="edit_weight"
+                  class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                  placeholder="Type animal weight"
+                />
+              </div>
+              <div class="col-span-1">
+                <label
+                  for="edit_wild"
+                  class="block mb-2.5 text-sm font-medium text-heading"
+                  >Is wild</label
+                >
+                <select
+                  name="isWild"
+                  id="edit_wild"
+                  class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body"
+                >
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="flex items-center space-x-4 border-t border-default pt-4 md:pt-6"
+            >
+              <button
+                type="submit"
+                class="text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 w-[160px] py-2.5 focus:outline-none cursor-pointer flex items-center justify-center gap-x-2"
+              >
+                <svg
+                  class="pointer-events-none"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.1464 1.14645C12.3417 0.951184 12.6583 0.951184 12.8535 1.14645L14.8535 3.14645C15.0488 3.34171 15.0488 3.65829 14.8535 3.85355L10.9109 7.79618C10.8349 7.87218 10.7471 7.93543 10.651 7.9835L6.72359 9.94721C6.53109 10.0435 6.29861 10.0057 6.14643 9.85355C5.99425 9.70137 5.95652 9.46889 6.05277 9.27639L8.01648 5.34897C8.06455 5.25283 8.1278 5.16507 8.2038 5.08907L12.1464 1.14645ZM12.5 2.20711L8.91091 5.79618L7.87266 7.87267L8.12731 8.12732L10.2038 7.08907L13.7929 3.5L12.5 2.20711ZM9.99998 2L8.99998 3H4.9C4.47171 3 4.18056 3.00039 3.95552 3.01877C3.73631 3.03668 3.62421 3.06915 3.54601 3.10899C3.35785 3.20487 3.20487 3.35785 3.10899 3.54601C3.06915 3.62421 3.03669 3.73631 3.01878 3.95552C3.00039 4.18056 3 4.47171 3 4.9V11.1C3 11.5283 3.00039 11.8194 3.01878 12.0445C3.03669 12.2637 3.06915 12.3758 3.10899 12.454C3.20487 12.6422 3.35785 12.7951 3.54601 12.891C3.62421 12.9309 3.73631 12.9633 3.95552 12.9812C4.18056 12.9996 4.47171 13 4.9 13H11.1C11.5283 13 11.8194 12.9996 12.0445 12.9812C12.2637 12.9633 12.3758 12.9309 12.454 12.891C12.6422 12.7951 12.7951 12.6422 12.891 12.454C12.9309 12.3758 12.9633 12.2637 12.9812 12.0445C12.9996 11.8194 13 11.5283 13 11.1V6.99998L14 5.99998V11.1V11.1207C14 11.5231 14 11.8553 13.9779 12.1259C13.9549 12.407 13.9057 12.6653 13.782 12.908C13.5903 13.2843 13.2843 13.5903 12.908 13.782C12.6653 13.9057 12.407 13.9549 12.1259 13.9779C11.8553 14 11.5231 14 11.1207 14H11.1H4.9H4.87934C4.47686 14 4.14468 14 3.87409 13.9779C3.59304 13.9549 3.33469 13.9057 3.09202 13.782C2.7157 13.5903 2.40973 13.2843 2.21799 12.908C2.09434 12.6653 2.04506 12.407 2.0221 12.1259C1.99999 11.8553 1.99999 11.5231 2 11.1207V11.1206V11.1V4.9V4.87935V4.87932V4.87931C1.99999 4.47685 1.99999 4.14468 2.0221 3.87409C2.04506 3.59304 2.09434 3.33469 2.21799 3.09202C2.40973 2.71569 2.7157 2.40973 3.09202 2.21799C3.33469 2.09434 3.59304 2.04506 3.87409 2.0221C4.14468 1.99999 4.47685 1.99999 4.87932 2H4.87935H4.9H9.99998Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Edit animal
+              </button>
+              <button
+                data-modal-hide="edit-modal"
+                type="button"
+                class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none cursor-pointer"
+                onclick="document.querySelector('#editAnimalForm').reset()"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Templates -->
+    <template class="js-skeleton-card-template">
+      <div
+        class="bg-neutral-primary-soft block max-w-xl p-6 border border-default rounded-base shadow-xs hover:bg-neutral-secondary-medium animate-pulse gap-y-[4px] flex flex-col"
+        role="status"
+      >
+        <div
+          class="h-[32px] bg-neutral-quaternary rounded-full w-full max-w-32"
+        ></div>
+        <hr
+          class="h-px w-full my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-50"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-40"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-70"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-60"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-50"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-65"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-60"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div
+          class="h-[22px] bg-neutral-quaternary rounded-full w-full max-w-50"
+        ></div>
+        <hr
+          class="h-px w-full my-[5px] mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div class="flex items-center w-full min-h-[40px] gap-x-2 justify-end">
+          <div
+            class="h-[40px] bg-neutral-quaternary rounded-[12px] w-full max-w-[110px]"
+          ></div>
+          <div
+            class="h-[40px] bg-neutral-quaternary rounded-[12px] w-full max-w-[110px]"
+          ></div>
+        </div>
+      </div>
+    </template>
+
+    <template class="js-animal-card-template">
+      <div
+        class="animal-card bg-neutral-primary-soft block max-w-xl p-6 border border-default rounded-base shadow-xs hover:bg-neutral-secondary-medium"
+      >
+        <h3
+          class="animal-title mb-3 text-2xl font-semibold tracking-tight text-heading leading-8"
+        >
+          Snake
+        </h3>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Category:&nbsp;</span>
+          <span class="animal-category">Reptile</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Speed:&nbsp;</span>
+          <span class="animal-speed">20</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Sound:&nbsp;</span>
+          <span class="animal-sound">Hiss</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Age:&nbsp;</span>
+          <span class="animal-year">20</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Weight:&nbsp;</span>
+          <span class="animal-weight">10</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Color:&nbsp;</span>
+          <span class="animal-color">Green</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Habitat:&nbsp;</span>
+          <span class="animal-habibat">Desert</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <p class="text-body">
+          <span class="font-[600]">Is wild:&nbsp;</span>
+          <span class="animal-wild">Yes</span>
+        </p>
+        <hr
+          class="h-px my-2 mx-auto bg-neutral-quaternary border-0 opacity-[0.5]"
+        />
+        <div class="flex gap-x-2 w-full items-end justify-end">
+          <button
+            type="button"
+            class="js-animal-edit-btn text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm focus:outline-none w-full h-[40px] cursor-pointer flex items-center justify-center gap-x-1 max-w-[110px]"
+          >
+            <svg
+              class="pointer-events-none"
+              width="18"
+              height="18"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.1464 1.14645C12.3417 0.951184 12.6583 0.951184 12.8535 1.14645L14.8535 3.14645C15.0488 3.34171 15.0488 3.65829 14.8535 3.85355L10.9109 7.79618C10.8349 7.87218 10.7471 7.93543 10.651 7.9835L6.72359 9.94721C6.53109 10.0435 6.29861 10.0057 6.14643 9.85355C5.99425 9.70137 5.95652 9.46889 6.05277 9.27639L8.01648 5.34897C8.06455 5.25283 8.1278 5.16507 8.2038 5.08907L12.1464 1.14645ZM12.5 2.20711L8.91091 5.79618L7.87266 7.87267L8.12731 8.12732L10.2038 7.08907L13.7929 3.5L12.5 2.20711ZM9.99998 2L8.99998 3H4.9C4.47171 3 4.18056 3.00039 3.95552 3.01877C3.73631 3.03668 3.62421 3.06915 3.54601 3.10899C3.35785 3.20487 3.20487 3.35785 3.10899 3.54601C3.06915 3.62421 3.03669 3.73631 3.01878 3.95552C3.00039 4.18056 3 4.47171 3 4.9V11.1C3 11.5283 3.00039 11.8194 3.01878 12.0445C3.03669 12.2637 3.06915 12.3758 3.10899 12.454C3.20487 12.6422 3.35785 12.7951 3.54601 12.891C3.62421 12.9309 3.73631 12.9633 3.95552 12.9812C4.18056 12.9996 4.47171 13 4.9 13H11.1C11.5283 13 11.8194 12.9996 12.0445 12.9812C12.2637 12.9633 12.3758 12.9309 12.454 12.891C12.6422 12.7951 12.7951 12.6422 12.891 12.454C12.9309 12.3758 12.9633 12.2637 12.9812 12.0445C12.9996 11.8194 13 11.5283 13 11.1V6.99998L14 5.99998V11.1V11.1207C14 11.5231 14 11.8553 13.9779 12.1259C13.9549 12.407 13.9057 12.6653 13.782 12.908C13.5903 13.2843 13.2843 13.5903 12.908 13.782C12.6653 13.9057 12.407 13.9549 12.1259 13.9779C11.8553 14 11.5231 14 11.1207 14H11.1H4.9H4.87934C4.47686 14 4.14468 14 3.87409 13.9779C3.59304 13.9549 3.33469 13.9057 3.09202 13.782C2.7157 13.5903 2.40973 13.2843 2.21799 12.908C2.09434 12.6653 2.04506 12.407 2.0221 12.1259C1.99999 11.8553 1.99999 11.5231 2 11.1207V11.1206V11.1V4.9V4.87935V4.87932V4.87931C1.99999 4.47685 1.99999 4.14468 2.0221 3.87409C2.04506 3.59304 2.09434 3.33469 2.21799 3.09202C2.40973 2.71569 2.7157 2.40973 3.09202 2.21799C3.33469 2.09434 3.59304 2.04506 3.87409 2.0221C4.14468 1.99999 4.47685 1.99999 4.87932 2H4.87935H4.9H9.99998Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span>Edit</span>
+          </button>
+          <button
+            data-modal-target="delete-modal"
+            data-modal-toggle="delete-modal"
+            type="button"
+            class="js-animal-delete-btn text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm focus:outline-none w-[40px] h-[40px] cursor-pointer flex items-center justify-center gap-x-1 w-full max-w-[110px]"
+          >
+            <svg
+              class="pointer-events-none"
+              width="18"
+              height="18"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.5 1C5.22386 1 5 1.22386 5 1.5C5 1.77614 5.22386 2 5.5 2H9.5C9.77614 2 10 1.77614 10 1.5C10 1.22386 9.77614 1 9.5 1H5.5ZM3 3.5C3 3.22386 3.22386 3 3.5 3H5H10H11.5C11.7761 3 12 3.22386 12 3.5C12 3.77614 11.7761 4 11.5 4H11V12C11 12.5523 10.5523 13 10 13H5C4.44772 13 4 12.5523 4 12V4L3.5 4C3.22386 4 3 3.77614 3 3.5ZM5 4H10V12H5V4Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span>Delete</span>
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <template id="toast-template">
+      <div
+        class="flex items-center w-full max-w-sm p-4 text-body bg-neutral-primary-soft rounded-base shadow-xs border border-default fixed flex items-center justify-start w-full max-w-[400px] p-3 top-5 end-5 transition-opacity"
+        role="alert"
+        style="z-index: 99999"
+      >
+        <div
+          class="js-toast-icon inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-warning bg-warning-soft rounded"
+        >
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <span class="sr-only">Warning icon</span>
+        </div>
+        <div class="js-toast-text ms-3 text-sm font-normal">
+          Improve password difficulty.
+        </div>
+      </div>
+    </template>
+
+    <script>
+      window.addEventListener("storage", () => window.location.reload());
+
+      function x() {
+        if (localStorage.getItem("access_token")) {
+          document.querySelector(`#dropdownInformationButton`).hidden = false;
+          document.querySelector(".js-email").textContent =
+            localStorage.getItem("email")
+              ? localStorage.getItem("email")
+              : "No email";
+          document.querySelector(".js-user-role").textContent =
+            localStorage.getItem("user_role")
+              ? localStorage.getItem("user_role")
+              : "No role";
+
+          fetch("https://json-api.uz/api/project/game-over/auth/get-user", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              access_token: localStorage.getItem("access_token"),
+            }),
+          })
+            .then((res) => res.text())
+            .then((res) => {
+              if (res === "Token expired!") {
+                // localStorage.removeItem("access_token");
+                // localStorage.removeItem("user_name");
+              }
+            });
+        } else if (!localStorage.getItem("access_token")) {
+          window.location.href = window.location.origin;
+        }
+      }
+      x();
+
+      var themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon",
+      );
+      var themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon",
+      );
+
+      // Change the icons inside the button based on previous settings
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
+      } else {
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      var themeToggleBtn = document.getElementById("theme-toggle");
+
+      // toggle icons inside button
+      themeToggleDarkIcon.classList.toggle("hidden");
+      themeToggleLightIcon.classList.toggle("hidden");
+
+      // if set via local storage previously
+      if (localStorage.getItem("color-theme")) {
+        if (localStorage.getItem("color-theme") === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.add("dark");
+        }
+      }
+
+      themeToggleBtn.addEventListener("click", () => {
+        {
+          // toggle icons inside button
+          themeToggleDarkIcon.classList.toggle("hidden");
+          themeToggleLightIcon.classList.toggle("hidden");
+
+          // if set via local storage previously
+          if (localStorage.getItem("color-theme")) {
+            if (localStorage.getItem("color-theme") === "light") {
+              document.documentElement.classList.add("dark");
+              localStorage.setItem("color-theme", "dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("color-theme", "light");
+            }
+
+            // if NOT set via local storage previously
+          } else {
+            if (document.documentElement.classList.contains("dark")) {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("color-theme", "light");
+            } else {
+              document.documentElement.classList.add("dark");
+              localStorage.setItem("color-theme", "dark");
+            }
+          }
+        }
+      });
+    </script>
+
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="/pages/dashboard/js/main_app.mjs" type="module"></script>
+  </body>
+</html>
